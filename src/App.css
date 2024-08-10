@@ -105,5 +105,57 @@ body {
 	color: #999;
 }
 .cards {
-  display: flex;
+	display: flex;
+	flex-wrap: wrap; /* Allows cards to wrap onto multiple lines */
+	gap: 20px; /* Space between cards */
+	justify-content: center; /* Center cards horizontally */
+	padding: 20px; /* Padding around the container */
+	background-color: #f4f4f4; /* Light background color for the container */
 }
+.searchBar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px auto;
+	padding: 5px;
+	width: 80%;
+	max-width: 400px;
+	border: 2px solid #ccc;
+	border-radius: 25px;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .searchBar:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .searchBar input {
+	flex: 1;
+	border: none;
+	padding: 1px 1px;
+	font-size: 16px;
+	border-radius: 25px 0 0 25px;
+	outline: none;
+  }
+  
+  .searchBar button {
+	border: none;
+	padding: 1px 1px;
+	font-size: 16px;
+	border-radius: 50%;
+	
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+  }
+  
+  .searchBar button:hover {
+	background-color: #45a049;
+  }
+  
+  .searchBar input::placeholder {
+	color: #999;
+  }
+  
