@@ -2,7 +2,8 @@ import { restaurantList } from "../config"
 import RestaurantCard from "./RestaurantCard"
 import { useEffect, useState } from "react"
 import ShimmerUi from "./ShimmerUI"
-
+import styles from "./Body.module.css"
+import { Link } from "react-router-dom"
 function filterData(searchText, allRestaurants) {
 	const filteredData = allRestaurants.filter((restaurant) =>
 		restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -48,7 +49,7 @@ const Body = () => {
 		<ShimmerUi />
 	) : (
 		<>
-			<div className="searchBar">
+			<div className={styles.searchBar}>
 				<input
 					type="text"
 					placeholder="Search..."
@@ -66,13 +67,14 @@ const Body = () => {
 					🔍
 				</button>
 			</div>
-			<div className="cards">
+			<div className={styles.cards}>
 				{filteredRestaurants.map((restaurant) => {
 					return (
-						<RestaurantCard
-							{...restaurant.info}
-							key={restaurant.info.id}
-						/>
+						<Link
+							to={"/restaurant/" + restaurant.info.id}
+							key={restaurant.info.id}>
+							<RestaurantCard {...restaurant.info} />
+						</Link>
 					)
 				})}
 			</div>

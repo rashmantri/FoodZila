@@ -1,9 +1,11 @@
 import { IMG_CDN } from "../config"
+import styles from "./RestaurantCard.module.css"
+
 const RestaurantCard = ({ name, cloudinaryImageId, cuisines, rating }) => {
 	return (
-		<div className="card">
+		<div className={styles.crd}>
 			<img src={IMG_CDN + cloudinaryImageId} />
-			<div className="card-content">
+			<div className={styles.content}>
 				<h2>{name}</h2>
 				<h3
 					style={{

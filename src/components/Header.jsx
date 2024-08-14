@@ -1,19 +1,21 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import styles from "./Header.module.css"
+
 const Header = () => {
-	const [login, setlogin] = useState("Login")
+	const [login, setLogin] = useState("Login")
 	return (
-		<div className="header">
-			<div className="title">
+		<div className={styles.hdr}>
+			<div className={styles.ttl}>
 				<img
 					alt="logo"
-					className="logo"
+					className={styles.lg}
 					src="https://www.indulge.com.mt/wp-content/uploads/2017/04/indukge-me-food-App-Icon.png"
 				/>
-				<h1 className="title">FoodZila</h1>
+				<h1 className={styles.ttl}>FoodZila</h1>
 			</div>
-			<div className="navbar-items">
-				<ul className="item-list">
+			<div className={styles.nav}>
+				<ul className={styles.lst}>
 					<li>
 						<Link to="/">Home</Link>
 					</li>
@@ -23,16 +25,15 @@ const Header = () => {
 					<li>
 						<Link to="/contact">Contact</Link>
 					</li>
-
 					<li>Cart</li>
 				</ul>
 				<button
-					className="loginLogout"
+					className={styles.btn}
 					onClick={() => {
-						if (login == "Login") {
-							setlogin("Logout")
+						if (login === "Login") {
+							setLogin("Logout")
 						} else {
-							setlogin("Login")
+							setLogin("Login")
 						}
 					}}>
 					{login}
@@ -41,4 +42,5 @@ const Header = () => {
 		</div>
 	)
 }
+
 export default Header
