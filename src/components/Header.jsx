@@ -17,13 +17,25 @@ const Header = () => {
 			<div className={styles.nav}>
 				<ul className={styles.lst}>
 					<li>
-						<Link to="/">Home</Link>
+						<Link
+							to="/"
+							className={styles.noUnderline}>
+							Home
+						</Link>
 					</li>
 					<li>
-						<Link to="/about">About Us</Link>
+						<Link
+							to="/about"
+							className={styles.noUnderline}>
+							About Us
+						</Link>
 					</li>
 					<li>
-						<Link to="/contact">Contact</Link>
+						<Link
+							to="/contact"
+							className={styles.noUnderline}>
+							Contact
+						</Link>
 					</li>
 					<li>Cart</li>
 				</ul>

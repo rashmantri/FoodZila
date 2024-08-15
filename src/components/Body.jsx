@@ -72,7 +72,8 @@ const Body = () => {
 					return (
 						<Link
 							to={"/restaurant/" + restaurant.info.id}
-							key={restaurant.info.id}>
+							key={restaurant.info.id}
+							className={styles.noUnderline}>
 							<RestaurantCard {...restaurant.info} />
 						</Link>
 					)
