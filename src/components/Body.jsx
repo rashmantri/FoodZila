@@ -4,21 +4,13 @@ import { useEffect, useState } from "react"
 import ShimmerUi from "./ShimmerUI"
 import styles from "./Body.module.css"
 import { Link } from "react-router-dom"
-function filterData(searchText, allRestaurants) {
-	const filteredData = allRestaurants.filter((restaurant) =>
-		restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
-	)
-	return filteredData
-}
-
+import { filterData } from "../utils/helper"
+import { useAllRestaurant } from "../utils/useAllRestaurant"
+import { useOnline } from "../utils/useOnline"
 const Body = () => {
 	const [searchText, setSearchText] = useState("")
-	const [allRestaurants, setAllRestaurants] = useState("")
-	const [filteredRestaurants, setFilteredRestaurants] = useState("")
-
-	useEffect(() => {
-		getRestaurants()
-	}, [])
+	const { allRestaurants, filteredRestaurants, setFilteredRestaurants } =
+		useAllRestaurant()
 
 	useEffect(() => {
 		if (searchText === "") {
@@ -30,19 +22,9 @@ const Body = () => {
 		}
 	}, [searchText, allRestaurants])
 
-	async function getRestaurants() {
-		const data = await fetch(
-			"https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1529738&lng=79.0005881&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-		)
-		const json = await data.json()
-		console.log(json)
-		//Optional Chaining
-		setAllRestaurants(
-			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-		)
-		setFilteredRestaurants(
-			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-		)
+	const isOnline = useOnline()
+	if (!isOnline) {
+		return <h1>You are offline</h1>
 	}
 
 	return allRestaurants.length === 0 ? (

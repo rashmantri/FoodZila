@@ -1,5 +1,6 @@
 export const IMG_CDN= "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-
+export const FETCHED_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1529738&lng=79.0005881&restaurantId="
+export const HOME_PAGE_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1529738&lng=79.0005881&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 export const restaurantList = [
 	{
 		info: {
