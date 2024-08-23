@@ -9,6 +9,7 @@ import { useAllRestaurant } from "../utils/useAllRestaurant"
 import { useOnline } from "../utils/useOnline"
 const Body = () => {
 	const [searchText, setSearchText] = useState("")
+	const isOnline = useOnline()
 	const { allRestaurants, filteredRestaurants, setFilteredRestaurants } =
 		useAllRestaurant()
 
@@ -22,9 +23,8 @@ const Body = () => {
 		}
 	}, [searchText, allRestaurants])
 
-	const isOnline = useOnline()
 	if (!isOnline) {
-		return <h1>You are offline</h1>
+		return <h1 className={styles.offline}>You are offline</h1>
 	}
 
 	return allRestaurants.length === 0 ? (

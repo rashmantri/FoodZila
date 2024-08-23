@@ -1,4 +1,4 @@
-import React from "react"
+import React, { lazy, Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App.jsx"
 import "./index.css"
@@ -8,6 +8,9 @@ import ErrorPage from "./components/ErrorPage.jsx"
 import Body from "./components/Body.jsx"
 import Contact from "./components/Contact.jsx"
 import RestaurantMenu from "./components/RestaurantMenu.jsx"
+
+const Cart = lazy(() => import("./components/Cart.jsx"))
+
 const appRouter = createBrowserRouter([
 	{
 		path: "/",
@@ -32,6 +35,15 @@ const appRouter = createBrowserRouter([
 			{
 				path: "/restaurant/:id",
 				element: <RestaurantMenu />,
+				errorElement: <ErrorPage />,
+			},
+			{
+				path: "/cart",
+				element: (
+					<Suspense>
+						<Cart />
+					</Suspense>
+				),
 				errorElement: <ErrorPage />,
 			},
 		],

@@ -37,7 +37,13 @@ const Header = () => {
 							Contact
 						</Link>
 					</li>
-					<li>Cart</li>
+					<li>
+						<Link
+							to="/cart"
+							className={styles.noUnderline}>
+							Cart
+						</Link>
+					</li>
 				</ul>
 				<button
 					className={styles.btn}

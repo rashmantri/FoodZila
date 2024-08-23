@@ -9,19 +9,15 @@ export const useAllRestaurant = () => {
 	}, [])
 
 	async function getRestaurants() {
-		try {
-			const data = await fetch(HOME_PAGE_URL)
-			const json = await data.json()
+		const data = await fetch(HOME_PAGE_URL)
+		const json = await data.json()
 
-			const restaurants =
-				json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-					?.restaurants || []
+		const restaurants =
+			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+				?.restaurants || []
 
-			setAllRestaurants(restaurants)
-			setFilteredRestaurants(restaurants)
-		} catch (error) {
-			console.error("Failed to fetch restaurants", error)
-		}
+		setAllRestaurants(restaurants)
+		setFilteredRestaurants(restaurants)
 	}
 	return {
 		allRestaurants,
