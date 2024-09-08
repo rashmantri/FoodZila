@@ -7,6 +7,7 @@ import About from "./components/About.jsx"
 import ErrorPage from "./components/ErrorPage.jsx"
 import Body from "./components/Body.jsx"
 import Contact from "./components/Contact.jsx"
+import Login from "./components/Login.jsx"
 import RestaurantMenu from "./components/RestaurantMenu.jsx"
 
 const Cart = lazy(() => import("./components/Cart.jsx"))
@@ -44,6 +45,11 @@ const appRouter = createBrowserRouter([
 						<Cart />
 					</Suspense>
 				),
+				errorElement: <ErrorPage />,
+			},
+			{
+				path: "/login",
+				element: <Login />,
 				errorElement: <ErrorPage />,
 			},
 		],

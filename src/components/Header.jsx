@@ -1,9 +1,22 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import styles from "./Header.module.css"
+import Login from "./Login"
 
 const Header = () => {
 	const [login, setLogin] = useState("Login")
+	const navigate = useNavigate() // Using useNavigate hook
+
+	const handleButtonClick = () => {
+		if (login === "Login") {
+			setLogin("Logout")
+			navigate("/login") // Navigate to the login route
+		} else {
+			setLogin("Login")
+			// You can redirect to another page or perform logout actions here
+		}
+	}
+
 	return (
 		<div className={styles.hdr}>
 			<div className={styles.ttl}>
@@ -47,13 +60,7 @@ const Header = () => {
 				</ul>
 				<button
 					className={styles.btn}
-					onClick={() => {
-						if (login === "Login") {
-							setLogin("Logout")
-						} else {
-							setLogin("Login")
-						}
-					}}>
+					onClick={handleButtonClick}>
 					{login}
 				</button>
 			</div>

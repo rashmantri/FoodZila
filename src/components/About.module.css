@@ -1,28 +1,33 @@
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.section {
+    margin-bottom: 20px;
+}
 
-.aboutContainer {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 20px;
-	text-align: center;
-	background-color: #f7f7f7;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .aboutTitle {
-	font-size: 2.5em;
-	color: #333;
-	margin-bottom: 20px;
-  }
-  
-  .aboutText {
-	font-size: 1.2em;
-	color: #666;
-	line-height: 1.6;
-	margin-bottom: 15px;
-  }
-  
-  .aboutText:last-of-type {
-	margin-bottom: 0;
-  }
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.toggleButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggleButton:hover {
+    background-color: #0056b3;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+}
