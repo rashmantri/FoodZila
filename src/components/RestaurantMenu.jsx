@@ -63,7 +63,7 @@ const RestaurantMenu = () => {
 									className={styles.menuItemRow}>
 									{/* Left side: Item Info */}
 									<div className={styles.itemInfo}>
-										<h3>{item.card.info.name}</h3>
+										<h3 className={styles.cardName}>{item.card.info.name}</h3>
 
 										{item.card.info.price ? (
 											<p>Price: ₹{item.card.info.price / 100}</p>

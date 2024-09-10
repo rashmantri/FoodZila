@@ -69,6 +69,11 @@
   
   /* RestaurantPage.module.css */
 
+.cardName {
+    color: #3f3f3f;
+    font-weight:bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
   
   .restaurantImage {
