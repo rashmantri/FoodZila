@@ -1,12 +1,13 @@
 import { restaurantList } from "../config"
 import RestaurantCard from "./RestaurantCard"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import ShimmerUi from "./ShimmerUI"
 import styles from "./Body.module.css"
 import { Link } from "react-router-dom"
 import { filterData } from "../utils/helper"
 import { useAllRestaurant } from "../utils/useAllRestaurant"
 import { useOnline } from "../utils/useOnline"
+
 const Body = () => {
 	const [searchText, setSearchText] = useState("")
 	const isOnline = useOnline()
@@ -49,6 +50,7 @@ const Body = () => {
 					🔍
 				</button>
 			</div>
+
 			<div className={styles.cards}>
 				{filteredRestaurants.map((restaurant) => {
 					return (
