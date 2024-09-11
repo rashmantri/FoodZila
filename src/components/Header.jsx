@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import styles from "./Header.module.css"
-import Login from "./Login"
+
+import { useSelector } from "react-redux"
 
 const Header = () => {
 	const [login, setLogin] = useState("Login")
@@ -16,6 +17,10 @@ const Header = () => {
 			// You can redirect to another page or perform logout actions here
 		}
 	}
+
+	//Subscribing to store using Selector
+	const cartItems = useSelector((store) => store.cart.items)
+	console.log(cartItems)
 
 	return (
 		<div className={styles.hdr}>
@@ -54,7 +59,7 @@ const Header = () => {
 						<Link
 							to="/cart"
 							className={styles.noUnderline}>
-							Cart
+							Cart ({cartItems.length})
 						</Link>
 					</li>
 				</ul>
