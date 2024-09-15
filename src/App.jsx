@@ -10,7 +10,7 @@ import { addUser, removeUser } from "./utils/Redux/userSlice.jsx"
 
 const App = () => {
 	const dispatch = useDispatch()
-
+	// console.log(import.meta)
 	useEffect(() => {
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
