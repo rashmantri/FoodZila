@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import styles from "./Header.module.css"
-
+import { signOut } from "firebase/auth"
+import { auth } from "../utils/firebase"
 import { useSelector } from "react-redux"
 
 const Header = () => {
@@ -14,13 +15,19 @@ const Header = () => {
 			navigate("/login") // Navigate to the login route
 		} else {
 			setLogin("Login")
+			signOut(auth)
+				.then(() => {
+					navigate("/")
+				})
+				.catch((error) => {
+					// An error happened.
+				})
 			// You can redirect to another page or perform logout actions here
 		}
 	}
 
 	//Subscribing to store using Selector
 	const cartItems = useSelector((store) => store.cart.items)
-	console.log(cartItems)
 
 	return (
 		<div className={styles.hdr}>
@@ -59,7 +66,11 @@ const Header = () => {
 						<Link
 							to="/cart"
 							className={styles.noUnderline}>
-							Cart ({cartItems.length})
+							<img
+								className={styles.cartLogo}
+								src="https://static.vecteezy.com/system/resources/previews/019/787/018/non_2x/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png"
+							/>{" "}
+							({cartItems.length})
 						</Link>
 					</li>
 				</ul>

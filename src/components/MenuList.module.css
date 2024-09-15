@@ -62,6 +62,37 @@
     font-size: 14px;
     cursor: pointer;
   }
+
+  .minusCounterPlus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .minusPlus{
+    padding: 5px;
+    margin: 5px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+  }
+
+  .minusPlus:hover{
+    background-color: #e60808;
+  }
+
+ 
   
   .vegIcon,
   .nonVegIcon {

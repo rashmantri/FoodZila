@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react"
+import React, { lazy, Suspense, useEffect } from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App.jsx"
 import "./index.css"
@@ -9,6 +9,8 @@ import Body from "./components/Body.jsx"
 import Contact from "./components/Contact.jsx"
 import Login from "./components/Login.jsx"
 import RestaurantMenu from "./components/RestaurantMenu.jsx"
+import { Provider } from "react-redux"
+import appStore from "./utils/Redux/appStore.jsx"
 
 const Cart = lazy(() => import("./components/Cart.jsx"))
 
@@ -41,7 +43,9 @@ const appRouter = createBrowserRouter([
 			{
 				path: "/cart",
 				element: (
-					<Suspense>
+					<Suspense fallback={<div>Loading Cart...</div>}>
+						{" "}
+						{/* Fallback UI */}
 						<Cart />
 					</Suspense>
 				),
@@ -58,6 +62,8 @@ const appRouter = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<RouterProvider router={appRouter} />
+		<Provider store={appStore}>
+			<RouterProvider router={appRouter} />
+		</Provider>
 	</React.StrictMode>
 )

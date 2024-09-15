@@ -31,6 +31,7 @@
 .nav {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .lst {
@@ -38,21 +39,27 @@
 	display: flex;
 	margin: 0;
 	padding: 0;
+
+
 }
 
 .lst > li {
 	margin: 0 15px;
-	padding: 10px 0;
+	padding: 10px 0 2px 2px;
 	font-weight: bold;
 	color: #333;
 	cursor: pointer;
 	transition: color 0.3s, border-bottom 0.3s;
+	position: relative;
+	align-items: center;
+	
 }
 
 .lst > li:hover {
 	color: #007bff;
 	border-bottom: 2px solid #007bff;
 }
+
 
 .btn {
 	background-color: #4caf50;
@@ -83,4 +90,11 @@
 .noUnderline {
     text-decoration: none;
     color: inherit; /* This ensures the text color stays the same */
+}
+
+.cartLogo {
+	width: 50px;
+	height: auto;
+	transition: transform 0.3s ease-in-out;
+	vertical-align: middle;
 }
