@@ -10,7 +10,8 @@ import Contact from "./components/Contact.jsx"
 import Login from "./components/Login.jsx"
 import RestaurantMenu from "./components/RestaurantMenu.jsx"
 import { Provider } from "react-redux"
-import appStore from "./utils/Redux/appStore.jsx"
+import appStore, { persistor } from "./utils/Redux/appStore.jsx"
+import { PersistGate } from "redux-persist/integration/react"
 
 const Cart = lazy(() => import("./components/Cart.jsx"))
 
@@ -63,7 +64,11 @@ const appRouter = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<Provider store={appStore}>
-			<RouterProvider router={appRouter} />
+			<PersistGate
+				loading={null}
+				persistor={persistor}>
+				<RouterProvider router={appRouter} />
+			</PersistGate>
 		</Provider>
 	</React.StrictMode>
 )

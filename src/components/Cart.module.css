@@ -35,9 +35,67 @@
   }
   
   .emptyCartMessage {
-    font-size: 1.5rem;
-    color: #777;
+    font-size: 1.6rem; /* Slightly increase font size for better visibility */
+    color: #4a4a4a; /* Darker color for better contrast */
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px; /* Reduced margin for better spacing */
+    font-weight: 600; /* Slightly bolder to stand out */
+  }
+  
+  .emptyCartMessageOne {
+    font-size: 1.1rem; /* Slightly increase font size for readability */
+    color: #888; /* Softer color to create a hierarchy */
+    text-align: center;
+    margin-top: 10px; /* Spacing between messages */
+    font-weight: 400; /* Normal weight for contrast */
+  }
+  
+  .emptyCartImage {
+    display: block; /* Ensure the image takes a block layout */
+    margin: 0 auto; /* Center the image */
+    width: 300px; /* Set a specific size for the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 30px; /* Add some spacing above the image */
+    opacity: 0.9; /* Add slight transparency */
+  }
+  
+  .emptyCartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all elements horizontally */
+    justify-content: center;
+    padding: 20px; /* Add some padding around the container */
+    background-color: #f9f9f9; /* Light background color for a clean look */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 400px; /* Limit the width */
+    margin: 50px auto; /* Center the container horizontally with top spacing */
+  }
+  
+  .totalPriceDiv {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Space out the heading and price */
+    background-color: #f0f4f4; /* Softer background color for better readability */
+    border-radius: 8px; /* Smoother rounded corners */
+    padding: 10px 15px; /* Padding for spacing inside the box */
+    border: 1px solid #ccc; /* Lighter border to add subtle separation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-top: 10px; /* Add some spacing at the top */
+     /* Optional max-width to avoid too wide a box */
+  }
+  
+  .totalPriceHeading {
+    font-size: 18px; /* Increase font size for better readability */
+    color: #333; /* Darker color for text */
+    font-weight: 600; /* Slightly bolder font */
+    margin-left: 10px; /* Add space on the left */
+  }
+  
+  .totalPrice {
+    font-size: 18px; /* Same size as the heading */
+    font-weight: 700; /* Bold for emphasis */
+    color: #27ae60; /* Green to highlight the price */
+    margin-right: 10px; /* Space on the right */
   }
   

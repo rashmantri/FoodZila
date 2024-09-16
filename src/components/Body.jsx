@@ -1,4 +1,3 @@
-import { restaurantList } from "../config"
 import RestaurantCard from "./RestaurantCard"
 import { useContext, useEffect, useState } from "react"
 import ShimmerUi from "./ShimmerUI"

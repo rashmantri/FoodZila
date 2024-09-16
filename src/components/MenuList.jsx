@@ -7,6 +7,7 @@ import {
 } from "../utils/Redux/cartSlice"
 import { IMG_CDN } from "../config"
 import styles from "./MenuList.module.css"
+import { useState } from "react"
 
 const MenuList = ({ restaurantMenu, showAddButton = true }) => {
 	const dispatch = useDispatch()
@@ -48,7 +49,12 @@ const MenuList = ({ restaurantMenu, showAddButton = true }) => {
 								{/* Left side: Item Info */}
 								<div className={styles.itemInfo}>
 									<h3 className={styles.cardName}>{item.card.info.name}</h3>
-									<p>Price: ₹{item.card.info.price / 100}</p>
+									<p>
+										Price: ₹
+										{item.card.info.price
+											? item.card.info.price / 100
+											: item.card.info.defaultPrice / 100}
+									</p>
 									<p>{item.card.info.description}</p>
 									<p>Quantity : {getItemQuantity(item.card.info.id)}</p>
 								</div>
