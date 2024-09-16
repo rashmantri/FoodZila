@@ -6,7 +6,6 @@ import { getAuth } from "firebase/auth";
 const {
   VITE_API_KEY,
   VITE_AUTH_DOMAIN,
-  VITE_PROJECT_ID,
   VITE_STORAGE_BUCKET,
   VITE_MESSAGE_SENDER,
   VITE_APP_ID,
@@ -17,7 +16,7 @@ const {
 const firebaseConfig = {
   apiKey: VITE_API_KEY,
   authDomain: VITE_AUTH_DOMAIN,
-  projectId: VITE_PROJECT_ID,
+  projectId: "foodzila-518bd",
   storageBucket: VITE_STORAGE_BUCKET,
   messagingSenderId: VITE_MESSAGE_SENDER,
   appId: VITE_APP_ID,
